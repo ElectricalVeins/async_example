@@ -1,10 +1,12 @@
-const promise = fetch('https://api.artic.edu/api/v1/artworks/search?q=cats')
+import { fetchCats, fetchDogs } from './api.js';
 
-const jsonPromise = promise.then((data) => {
-  return data.json()
-})
+// const promise = fetch('https://api.artic.edu/api/v1/artworks/search?q=cats')
+//
+// const jsonPromise = promise.then((data) => {
+//   return data.json()
+// })
 
-jsonPromise.then((cats) => {
+fetchCats().then((cats) => {
   console.log(cats)
 
   for (const cat of cats.data) {
